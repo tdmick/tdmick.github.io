@@ -8,6 +8,8 @@ h2{
 }
 label{
   color: orange;
+  font-size: 5em;
+  font-weight: bold;
 }
 body {
   background-color: black;
@@ -15,15 +17,15 @@ body {
 .input-output-box{
 	position: relative;
     border: 1px solid orange;
-    padding: 20px; 
-    width: 260px;
-    height: 3px;    
+    padding: 10px; 
+    width: 100px;
+    height: 10px;    
 }
 .custom-select {
   position: relative;
   display: block;
-  max-width: 300px;
-  min-width: 180px;
+  max-width: 120px;
+  min-width: 120px;
   margin: 0 auto;
   border: 1px solid orange;
   background-color: #ffffff;
@@ -76,33 +78,33 @@ body {
 <h1 align="center">Halloween Unit Converter</h1>
 
 <div align="center">
-	<label>Value: </label>
-    <br>
 	<input class="input-output-box" id="fromValue" type="number">
 </div>
 <div align="center">
-	<label>From Unit: </label>
 	<label class="custom-select" for="fromUnit">
 		<select id="fromUnit">
-			  <option value="inch" selected="selected">inch</option>
-			  <option value="feet">feet</option>
-			  <option value="yard">yard</option>
-			  <option value="mile">mile</option>
-			  <option value="meter">meter</option>
-			  <option value="kilometer">kilometer</option>
+			  <option value="inch" selected="selected">in</option>
+			  <option value="feet">ft</option>
+			  <option value="yard">yd</option>
+			  <option value="mile">mi</option>
+			  <option value="meter">m</option>
+			  <option value="kilometer">km</option>
 		</select>
 	</label>
 </div>
 <div align="center">
-	<label>To Unit: </label>
+	<label>=</label>
+    <div align="center">
+	<input class="input-output-box" id="fromValue" type="number">
+</div>
 	<label class="custom-select" for="toUnit">
 		<select id="toUnit">
-			  <option value="inch">inch</option>
-			  <option value="feet" selected="selected">feet</option>
-			  <option value="yard">yard</option>
-			  <option value="mile">mile</option>
-			  <option value="meter">meter</option>
-			  <option value="kilometer">kilometer</option>
+			  <option value="inch">in</option>
+			  <option value="feet" selected="selected">ft</option>
+			  <option value="yard">yd</option>
+			  <option value="mile">mi</option>
+			  <option value="meter">m</option>
+			  <option value="kilometer">km</option>
 		</select>
 	</label>
 </div>
