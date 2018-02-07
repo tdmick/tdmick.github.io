@@ -1,13 +1,20 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <style>
+h1,
+h2{
+  color: orange;
+}
+label{
+  color: orange;
+}
 body {
   background-color: black;
 }
 .input-output-box{
 	position: relative;
-    border: 1px solid #3C1C78;
+    border: 1px solid orange;
     padding: 20px; 
     width: 260px;
     height: 3px;    
@@ -18,7 +25,7 @@ body {
   max-width: 300px;
   min-width: 180px;
   margin: 0 auto;
-  border: 1px solid #3C1C78;
+  border: 1px solid orange;
   background-color: #ffffff;
   z-index: 10;
 }
@@ -52,9 +59,9 @@ body {
   z-index: -1;
 }
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: orange;
     border: none;
-    color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -66,16 +73,13 @@ body {
 <title>Unit Converter</title>
 </head>
 <body>
-<h1 align="center">Distance Unit Converter</h1>
-<h2 align="center">Welcome to my unit convertor!</h2>
-<h2 align="center">By Xiaohui(Sherry) Qiao</h2>
-<h2 align="center">Please enter a value and choose the units to convert:</h2>
+<h1 align="center">Halloween Unit Converter</h1>
 
 <div align="center">
-	<label>Value: </label>	
+	<label>Value: </label>
+    <br>
 	<input class="input-output-box" id="fromValue" type="number">
 </div>
-<br>
 <div align="center">
 	<label>From Unit: </label>
 	<label class="custom-select" for="fromUnit">
@@ -89,8 +93,6 @@ body {
 		</select>
 	</label>
 </div>
-<br>
-<br>
 <div align="center">
 	<label>To Unit: </label>
 	<label class="custom-select" for="toUnit">
