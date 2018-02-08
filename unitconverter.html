@@ -75,13 +75,13 @@ body {
 <title>Unit Converter</title>
 </head>
 <body>
-<h1 align="center">Halloween Unit Converter</h1>
+<h1 align="center">Unit Converter</h1>
 
 <div align="center">
-	<input class="input-output-box" id="fromValue" type="number">
+	<input class="input-output-box" id="fromValue" type="number" onchange="LengthConverter()">
 </div>
 <div align="center">
-	<label class="custom-select" for="fromUnit">
+	<label class="custom-select" for="fromUnit" onchange="LengthConverter()">
 		<select id="fromUnit">
 			  <option value="inch" selected="selected">in</option>
 			  <option value="feet">ft</option>
@@ -95,9 +95,9 @@ body {
 <div align="center">
 	<label>=</label>
     <div align="center">
-	<input class="input-output-box" id="fromValue" type="number">
+	<input class="input-output-box" id="fromValue" type="number"  onchange="LengthConverter()">
 </div>
-	<label class="custom-select" for="toUnit">
+	<label class="custom-select" for="toUnit" onchange="LengthConverter()">
 		<select id="toUnit">
 			  <option value="inch">in</option>
 			  <option value="feet" selected="selected">ft</option>
@@ -110,7 +110,7 @@ body {
 </div>
 </br>
 <div align="center">
-	<button class="button" onclick="LengthConverter()">Convert</button>
+	<button class="button" onchange="LengthConverter()">Convert</button>
 </div>
 <div id="summary"></div>
 <script>
