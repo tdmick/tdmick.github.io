@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1,
+h2{
+  color: orange;
+}
+p{
+  color: orange;
+  text-align: center;
+}
+label{
+  color: orange;
+  font-size: 5em;
+  font-weight: bold;
+}
+body {
+  background-color: black;
+}
+.input-output-box{
+	position: relative;
+    border: 1px solid orange;
+    padding: 10px; 
+    width: 100px;
+    height: 10px;    
+}
+.custom-select {
+  position: relative;
+  display: block;
+  max-width: 120px;
+  min-width: 120px;
+  margin: 0 auto;
+  border: 1px solid orange;
+  background-color: #ffffff;
+  z-index: 10;
+}
+.custom-select select {
+  border: none;
+  outline: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  padding: 12px 55px 15px 15px;
+  font-size: 14px;
+  color: ##66ffff;
+}
+.custom-select:after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  line-height: 38px;
+  content: "∨";
+  text-align: center;
+  color: ##66ffff;
+  font-size: 24px;
+  border-left: 1px solid #3C1C78;
+  z-index: -1;
+}
+.button {
+    background-color: orange;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+</style>
+<title>Unit Converter</title>
+</head>
+<body>
+<h1 align="center">Tyler's Halloween Unit Converter</h1>
+<h2 align="center">Don't be scared! Unit Conversion is a Treat!</h2>
+<p>Sometimes this converter gets a number behind the input. Be sure to press enter to make sure your output matches the most recent input.</p>
+
+<div align="center">
+	<input class="input-output-box" id="fromValue" type="number" onchange="LengthConverter()" onkeydown="LengthConverter()">
+</div>
+<div align="center">
+	<label class="custom-select" for="fromUnit" onchange="LengthConverter()" onkeydown="LengthConverter()">
+		<select id="fromUnit">
+			  <option value="inch" selected="selected">in</option>
+			  <option value="feet">ft</option>
+			  <option value="yard">yd</option>
+			  <option value="mile">mi</option>
+			  <option value="meter">m</option>
+			  <option value="kilometer">km</option>
+		</select>
+	</label>
+</div>
+<div align="center">
+	<label>=</label>
+</div>
+<div id="summary"></div>
+	<label class="custom-select" for="toUnit" onchange="LengthConverter()" onkeydown="LengthConverter()">
+    <div id="summary"></div>
+		<select id="toUnit">
+			  <option value="inch">in</option>
+			  <option value="feet" selected="selected">ft</option>
+			  <option value="yard">yd</option>
+			  <option value="mile">mi</option>
+			  <option value="meter">m</option>
+			  <option value="kilometer">km</option>
+		</select>
+	</label>
+</div>
+</br>
+<script>
+function LengthConverter() {
+	var valueFrom_init = document.getElementById("fromValue").value;
+	var valueFrom = parseFloat(valueFrom_init);
+	var valueTo;
+	var e1 = document.getElementById("fromUnit");
+	var unitFrom = e1.options[e1.selectedIndex].value;
+	var e2 = document.getElementById("toUnit");
+	var unitTo = e2.options[e2.selectedIndex].value;
+    console.log(valueFrom);
+	console.log(valueTo);
+	console.log(unitFrom);
+	console.log(unitTo);
+		 
+	if (unitFrom=="feet") {
+		if(unitTo=="feet"){
+			valueTo =(valueFrom/1).toFixed(2); }
+		else if(unitTo=="meter"){
+			valueTo =(valueFrom/3.2808).toFixed(2); }
+		else if(unitTo=="inch"){
+			valueTo = (valueFrom*12).toFixed(2);}
+		else if(unitTo=="yard"){
+			valueTo = (valueFrom*0.3333).toFixed(2);}	
+		else if(unitTo=="kilometer"){
+			valueTo = (valueFrom/3280.8).toFixed(2);}
+		else if(unitTo=="mile"){
+			valueTo = (valueFrom*0.00018939).toFixed(5);}	
+	}
+	
+	if (unitFrom=="meter") {
+		if(unitTo=="meter"){
+			valueTo =(valueFrom/1).toFixed(2); }
+		else if(unitTo=="feet"){
+			valueTo =(valueFrom*3.2808).toFixed(2); }
+		else if(unitTo=="inch"){
+			valueTo = (valueFrom*39.370).toFixed(2);}
+		else if(unitTo=="yard"){
+			valueTo = (valueFrom*1.0936).toFixed(2);}	
+		else if(unitTo=="kilometer"){
+			valueTo = (valueFrom/1000).toFixed(2);}
+		else if(unitTo=="mile"){
+			valueTo = (valueFrom*0.00062137).toFixed(5);}	
+	}
+	
+	if (unitFrom=="meter") {
+		if(unitTo=="meter"){
+			valueTo =(valueFrom/1).toFixed(2); }
+		else if(unitTo=="feet"){
+			valueTo =(valueFrom*3.2808).toFixed(2); }
+		else if(unitTo=="inch"){
+			valueTo = (valueFrom*39.370).toFixed(2);}
+		else if(unitTo=="yard"){
+			valueTo = (valueFrom*1.0936).toFixed(2);}	
+		else if(unitTo=="kilometer"){
+			valueTo = (valueFrom/1000).toFixed(2);}
+		else if(unitTo=="mile"){
+			valueTo = (valueFrom*0.00062137).toFixed(5);}	
+	}
+	if (unitFrom=="inch") {
+		if(unitTo=="inch"){
+			valueTo =(valueFrom/1).toFixed(2); }
+		else if(unitTo=="feet"){
+			valueTo =(valueFrom*0.083333).toFixed(3); }
+		else if(unitTo=="meter"){
+			valueTo = (valueFrom/39.370).toFixed(3);}
+		else if(unitTo=="yard"){
+			valueTo = (valueFrom*0.027778).toFixed(3);}	
+		else if(unitTo=="kilometer"){
+			valueTo = (valueFrom/39370).toFixed(6);}
+		else if(unitTo=="mile"){
+			valueTo = (valueFrom*0.000015783).toFixed(6);}	
+	}
+	
+	if (unitFrom=="yard") {
+		if(unitTo=="yard"){
+			valueTo =(valueFrom/1).toFixed(2); }
+		else if(unitTo=="feet"){
+			valueTo =(valueFrom*3).toFixed(3); }
+		else if(unitTo=="meter"){
+			valueTo = (valueFrom/1.0936).toFixed(3);}
+		else if(unitTo=="inch"){
+			valueTo = (valueFrom*36).toFixed(3);}	
+		else if(unitTo=="kilometer"){
+			valueTo = (valueFrom/1093.6).toFixed(5);}
+		else if(unitTo=="mile"){
+			valueTo = (valueFrom*0.00056818).toFixed(5);}	
+	}
+	
+	if (unitFrom=="kilometer") {
+		if(unitTo=="kilometer"){
+			valueTo =(valueFrom/1).toFixed(2); }
+		else if(unitTo=="feet"){
+			valueTo =(valueFrom*3280.8).toFixed(3); }
+		else if(unitTo=="meter"){
+			valueTo = (valueFrom*1000).toFixed(3);}
+		else if(unitTo=="inch"){
+			valueTo = (valueFrom*39370).toFixed(3);}	
+		else if(unitTo=="yard"){
+			valueTo = (valueFrom*1093.6).toFixed(5);}
+		else if(unitTo=="mile"){
+			valueTo = (valueFrom*0.62137).toFixed(5);}	
+	}
+	if (unitFrom=="mile") {
+		if(unitTo=="mile"){
+			valueTo =(valueFrom/1).toFixed(2); }
+		else if(unitTo=="feet"){
+			valueTo =(valueFrom*5280).toFixed(3); }
+		else if(unitTo=="meter"){
+			valueTo = (valueFrom/0.00062137).toFixed(3);}
+		else if(unitTo=="inch"){
+			valueTo = (valueFrom*63360).toFixed(3);}	
+		else if(unitTo=="yard"){
+			valueTo = (valueFrom*1760).toFixed(5);}
+		else if(unitTo=="kilometer"){
+			valueTo = (valueFrom/0.62137).toFixed(5);}	
+	}
+     
+  var sumDIV = document.getElementById('summary');
+  sumDIV.innerHTML= "<h2 align='center'>"+ valueTo+"</h2>"
+  }
+</script>
+</body>
+</html>
