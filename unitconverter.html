@@ -94,10 +94,10 @@ body {
 </div>
 <div align="center">
 	<label>=</label>
-    <div align="center">
-	<input class="input-output-box" id="fromValue" type="number"  onchange="LengthConverter()" onkeydown="LengthConverter()">
 </div>
+<div id="summary"></div>
 	<label class="custom-select" for="toUnit" onchange="LengthConverter()" onkeydown="LengthConverter()">
+    <div id="summary"></div>
 		<select id="toUnit">
 			  <option value="inch">in</option>
 			  <option value="feet" selected="selected">ft</option>
@@ -109,7 +109,6 @@ body {
 	</label>
 </div>
 </br>
-<div id="summary"></div>
 <script>
 
 function LengthConverter() {
